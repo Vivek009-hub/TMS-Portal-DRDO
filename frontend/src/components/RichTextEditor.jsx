@@ -1,0 +1,21 @@
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+
+const modules = {
+  toolbar: [
+    [{ header: [1, 2, 3, false] }],
+    ['bold', 'italic', 'underline'],
+    [{ list: 'ordered' }, { list: 'bullet' }],
+    [{ align: [] }],
+    ['link'],
+    ['clean'],
+  ],
+};
+
+export default function RichTextEditor({ value, onChange }) {
+  return (
+    <div className="quill-editor">
+      <ReactQuill value={value || ''} onChange={onChange} modules={modules} theme="snow" />
+    </div>
+  );
+}
